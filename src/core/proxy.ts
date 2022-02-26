@@ -187,6 +187,7 @@ export const objectTraps: ProxyHandler<ProxyState> = {
 	},
 	// Note: We never coerce `desc.value` into an Immer draft, because we can't make
 	// the same guarantee in ES5 mode.
+	
 	getOwnPropertyDescriptor(state, prop) {
 		const owner = latest(state)
 		const desc = Reflect.getOwnPropertyDescriptor(owner, prop)
